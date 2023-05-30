@@ -15,7 +15,7 @@ public class SpringSecurityConfig {
         http
                 .authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                        .requestMatchers("/test").permitAll()
+                        .requestMatchers("/api/service/v1/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .logout(withDefaults());
